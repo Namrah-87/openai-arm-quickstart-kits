@@ -1,8 +1,13 @@
 {
-  "board_name": "Orange Pi Zero *",
-  "cpu": "Allwinner H618 (ARM Cortex-A53)",
+  "board_name": "Orange Pi Zero 3 Series",
+  "models_in_series": [
+    "Orange Pi Zero 3",
+    "Orange Pi Zero 3B",
+    "Orange Pi Zero 3 LTS"
+  ],
+  "cpu": "Allwinner H618 (ARM Cortex-A53, quad-core)",
   "python_version": "3.10",
-  "audio_backend": "USB microphone recommended; I2S requires kernel overlay",
+  "audio_backend": "USB microphone recommended; I2S requires enabling overlays in armbianEnv.txt",
   "recommended_models": [
     "gpt-4o-mini",
     "gpt-4o-mini-transcribe",
@@ -16,8 +21,10 @@
     "vision": false
   },
   "notes": [
-    "Thermals are good; no throttling under light AI workloads.",
-    "I2S microphone requires enabling overlays in armbianEnv.txt.",
-    "Best performance when running from SSD or fast SD card."
+    "All H618-based Zero 3 variants share identical CPU and audio behavior.",
+    "I2S microphone support requires enabling overlays and may vary by kernel.",
+    "Thermals are stable under light AI workloads; consider a heatsink for long sessions.",
+    "Best performance when using a high-quality SD card or SSD via USB.",
+    "Network stability is generally good, but WiFi throughput varies by board revision."
   ]
 }
