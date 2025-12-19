@@ -1,0 +1,28 @@
+{
+  "board_name": "Raspberry Pi 5 Series",
+  "models_in_series": [
+    "Raspberry Pi 5",
+    "Raspberry Pi Compute Module 5"
+  ],
+  "cpu": "Broadcom BCM2712 (ARM Cortex-A76, quad-core)",
+  "python_version": "3.11",
+  "audio_backend": "USB microphone or 3.5mm audio jack",
+  "recommended_models": [
+    "gpt-4o-mini",
+    "gpt-4o",
+    "gpt-4o-mini-transcribe",
+    "gpt-4o-mini-tts"
+  ],
+  "capabilities": {
+    "chat": true,
+    "streaming": true,
+    "speech_to_text": true,
+    "text_to_speech": true,
+    "vision": true
+  },
+  "notes": [
+    "Fastest mainstream ARM SBC for AI workloads.",
+    "NVMe support dramatically improves performance.",
+    "Ideal for vision-heavy AI demos."
+  ]
+}
