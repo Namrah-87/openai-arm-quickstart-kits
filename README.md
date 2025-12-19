@@ -1,9 +1,8 @@
-# openai-arm-quickstart-kits
-Minimal Python templates for using OpenAI models on ARM boards (Orange Pi, Radxa, Raspberry Pi).
-# OpenAI ARM Quickstart Kits  
+# OpenAI ARM Quickstart Kits
 A hardware‑aware AI toolkit for ARM single‑board computers.
 
-This project provides a clean, minimal, and extensible framework for running OpenAI models on low‑cost ARM boards such as the Orange Pi Zero 3 Series, Radxa Zero 3 Series, Raspberry Pi 4/5, and more.  
+This project provides a clean, minimal, and extensible framework for running OpenAI models on low‑cost ARM boards such as the Orange Pi Zero 3 Series, Radxa Zero 3 Series, Raspberry Pi 4/5, and more.
+
 It includes:
 
 - A micro‑framework (`openai_arm/`)
@@ -21,6 +20,7 @@ The goal is simple:
 
 ### **Hardware‑Aware Profiles**
 Each board family has a JSON profile describing:
+
 - CPU architecture  
 - Recommended Python version  
 - Audio backend  
@@ -47,13 +47,14 @@ This keeps your templates clean and your code modular.
 
 ### **Command‑Line Interface (`oaicli`)**
 A simple, powerful CLI for interacting with OpenAI models on ARM boards:
-oaicli chat "hello" 
-oaicli stream "tell me a story" 
-oaicli transcribe audio.wav oaicli speak "Hello world" out.mp3 
+
+```
+oaicli chat "hello"
+oaicli stream "tell me a story"
+oaicli transcribe audio.wav
+oaicli speak "Hello world" out.mp3
 oaicli profile orange_pi_zero_series
-
-
-The CLI is powered by `cli/main.py` and registered via `setup.cfg`.
+```
 
 ---
 
@@ -69,20 +70,41 @@ These are intentionally short, dependency‑light, and easy to modify.
 
 ---
 
-### **Extensible Architecture**
-This project is designed to grow into a full ecosystem:
+## ✅ Repository Structure
 
-- Add new board profiles  
-- Add new CLI commands  
-- Add showcase apps  
-- Add real‑time audio pipelines  
-- Add robotics integrations  
-
-Everything is modular and clean.
-
-
-The CLI is powered by `cli/main.py` and registered via `setup.cfg`.
-
+```
+openai-arm-quickstart-kits/
+│
+├── cli/
+│   ├── __init__.py
+│   └── main.py
+│
+├── openai_arm/
+│   ├── __init__.py
+│   ├── client.py
+│   ├── profile_loader.py
+│   ├── chat.py
+│   ├── audio.py
+│   └── vision.py
+│
+├── profiles/
+│   ├── orange_pi_zero_series.json
+│   ├── radxa_zero3_series.json
+│   ├── raspberry_pi_5_series.json
+│   └── generic_arm.json
+│
+├── templates/
+│   ├── chat_minimal.py
+│   ├── chat_streaming.py
+│   ├── speech_to_text.py
+│   └── text_to_speech.py
+│
+├── oaicli
+├── setup.cfg
+├── requirements.txt
+├── .gitignore
+└── LICENSE
+```
 
 ---
 
@@ -92,15 +114,148 @@ The CLI is powered by `cli/main.py` and registered via `setup.cfg`.
 ```bash
 git clone https://github.com/<your-username>/openai-arm-quickstart-kits
 cd openai-arm-quickstart-kits
+```
 
 ### **2. Create a virtual environment**
+```bash
 python3 -m venv venv
 source venv/bin/activate
+```
 
-### **3. Install dependencies
+### **3. Install dependencies**
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
+```
 
-### **4. Add you API key
-Create a .env file:
+### **4. Add your API key**
+Create a `.env` file:
+
+```
 OPENAI_API_KEY=your-key-here
+```
+
+---
+
+## ✅ Using the CLI
+
+### **Chat**
+```bash
+oaicli chat "Explain ARM boards"
+```
+
+### **Streaming Chat**
+```bash
+oaicli stream "Tell me a joke"
+```
+
+### **Speech‑to‑Text**
+```bash
+oaicli transcribe audio.wav
+```
+
+### **Text‑to‑Speech**
+```bash
+oaicli speak "Hello from my ARM board" out.mp3
+```
+
+### **Show a hardware profile**
+```bash
+oaicli profile orange_pi_zero_series
+```
+
+---
+
+## ✅ Using the Framework in Python
+
+### **Simple Chat**
+```python
+from openai_arm.chat import simple_chat
+print(simple_chat("What is an SBC?"))
+```
+
+### **Transcribe Audio**
+```python
+from openai_arm.audio import transcribe
+print(transcribe("audio.wav"))
+```
+
+### **Load a Profile**
+```python
+from openai_arm.profile_loader import load_profile
+profile = load_profile("radxa_zero3_series")
+print(profile["cpu"])
+```
+
+---
+
+## ✅ Supported Boards
+
+- Orange Pi Zero 3 Series  
+- Orange Pi 3 Series  
+- Radxa Zero 3 Series  
+- Raspberry Pi 4 Series  
+- Raspberry Pi 5 Series  
+- Khadas VIM Series  
+- Generic ARMv8 boards  
+
+More profiles can be added easily.
+
+---
+
+## ✅ Why This Project Exists
+
+AI hardware is becoming the new literacy.  
+But most people can’t afford expensive devices.
+
+This project brings **world‑class AI** to **$15–$50 ARM boards**, making it accessible for:
+
+- students  
+- educators  
+- makers  
+- robotics teams  
+- hobbyists  
+- open‑source developers  
+
+Everything is designed to be:
+
+- minimal  
+- modular  
+- clean  
+- hardware‑aware  
+- beginner‑friendly  
+- powerful enough for real projects  
+
+---
+
+## ✅ License
+
+This project is released under the MIT License.
+
+---
+
+## ✅ Contributing
+
+Pull requests are welcome.  
+You can contribute:
+
+- new board profiles  
+- new CLI commands  
+- new templates  
+- showcase apps  
+- documentation improvements  
+
+---
+
+## ✅ Roadmap
+
+- ✅ Hardware profiles  
+- ✅ Micro‑framework  
+- ✅ CLI tool  
+- ⏳ Showcase apps  
+- ⏳ Real‑time audio  
+- ⏳ Hardware auto‑detection  
+- ⏳ Robotics integrations  
+- ⏳ Plugin system  
+- ⏳ v1.0 release  
+
