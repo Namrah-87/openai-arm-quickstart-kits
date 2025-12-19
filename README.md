@@ -18,7 +18,7 @@ The goal is simple:
 
 ## ✅ Features
 
-### **Hardware‑Aware Profiles**
+### Hardware‑Aware Profiles
 Each board family has a JSON profile describing:
 
 - CPU architecture  
@@ -32,7 +32,7 @@ Profiles allow your code and CLI to adapt automatically to the hardware.
 
 ---
 
-### **Micro‑Framework Core (`openai_arm/`)**
+### Micro‑Framework Core (`openai_arm/`)
 A lightweight internal SDK that provides:
 
 - `client.py` — OpenAI client initialization  
@@ -45,7 +45,7 @@ This keeps your templates clean and your code modular.
 
 ---
 
-### **Command‑Line Interface (`oaicli`)**
+### Command‑Line Interface (`oaicli`)
 A simple, powerful CLI for interacting with OpenAI models on ARM boards:
 
 ```
@@ -58,7 +58,7 @@ oaicli profile orange_pi_zero_series
 
 ---
 
-### **Templates**
+### Templates
 Minimal examples that demonstrate how to use the framework:
 
 - `chat_minimal.py`
@@ -99,6 +99,8 @@ openai-arm-quickstart-kits/
 │   ├── speech_to_text.py
 │   └── text_to_speech.py
 │
+├── install.sh
+├── install.py
 ├── oaicli
 ├── setup.cfg
 ├── requirements.txt
@@ -108,27 +110,45 @@ openai-arm-quickstart-kits/
 
 ---
 
-## ✅ Installation
+## ✅ One‑Line Installer
 
-### **1. Clone the repository**
+Run this on your ARM board:
+
+```
+curl -sSL https://raw.githubusercontent.com/Namrah-87/openai-arm-quickstart-kits/main/install.sh | bash
+```
+
+The installer will:
+
+- auto‑detect your ARM board  
+- install system packages  
+- install Python dependencies  
+- load the correct hardware profile  
+- give next‑step instructions  
+
+---
+
+## ✅ Manual Installation
+
+### Clone the repository
 ```bash
-git clone https://github.com/<your-username>/openai-arm-quickstart-kits
+git clone https://github.com/Namrah-87/openai-arm-quickstart-kits
 cd openai-arm-quickstart-kits
 ```
 
-### **2. Create a virtual environment**
+### Create a virtual environment
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-### **3. Install dependencies**
+### Install dependencies
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### **4. Add your API key**
+### Add your API key
 Create a `.env` file:
 
 ```
@@ -139,27 +159,27 @@ OPENAI_API_KEY=your-key-here
 
 ## ✅ Using the CLI
 
-### **Chat**
+### Chat
 ```bash
 oaicli chat "Explain ARM boards"
 ```
 
-### **Streaming Chat**
+### Streaming Chat
 ```bash
 oaicli stream "Tell me a joke"
 ```
 
-### **Speech‑to‑Text**
+### Speech‑to‑Text
 ```bash
 oaicli transcribe audio.wav
 ```
 
-### **Text‑to‑Speech**
+### Text‑to‑Speech
 ```bash
 oaicli speak "Hello from my ARM board" out.mp3
 ```
 
-### **Show a hardware profile**
+### Show a hardware profile
 ```bash
 oaicli profile orange_pi_zero_series
 ```
@@ -168,19 +188,19 @@ oaicli profile orange_pi_zero_series
 
 ## ✅ Using the Framework in Python
 
-### **Simple Chat**
+### Simple Chat
 ```python
 from openai_arm.chat import simple_chat
 print(simple_chat("What is an SBC?"))
 ```
 
-### **Transcribe Audio**
+### Transcribe Audio
 ```python
 from openai_arm.audio import transcribe
 print(transcribe("audio.wav"))
 ```
 
-### **Load a Profile**
+### Load a Profile
 ```python
 from openai_arm.profile_loader import load_profile
 profile = load_profile("radxa_zero3_series")
@@ -208,7 +228,7 @@ More profiles can be added easily.
 AI hardware is becoming the new literacy.  
 But most people can’t afford expensive devices.
 
-This project brings **world‑class AI** to **$15–$50 ARM boards**, making it accessible for:
+This project brings world‑class AI to **$15–$50 ARM boards**, making it accessible for:
 
 - students  
 - educators  
@@ -244,18 +264,3 @@ You can contribute:
 - new templates  
 - showcase apps  
 - documentation improvements  
-
----
-
-## ✅ Roadmap
-
-- ✅ Hardware profiles  
-- ✅ Micro‑framework  
-- ✅ CLI tool  
-- ⏳ Showcase apps  
-- ⏳ Real‑time audio  
-- ⏳ Hardware auto‑detection  
-- ⏳ Robotics integrations  
-- ⏳ Plugin system  
-- ⏳ v1.0 release  
-
