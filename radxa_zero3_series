@@ -1,0 +1,27 @@
+{
+  "board_name": "Radxa Zero 3 Series",
+  "models_in_series": [
+    "Radxa Zero 3W",
+    "Radxa Zero 3E"
+  ],
+  "cpu": "Rockchip RK3566 (ARM Cortex-A55, quad-core)",
+  "python_version": "3.11",
+  "audio_backend": "USB microphone or onboard I2S (stable)",
+  "recommended_models": [
+    "gpt-4o-mini",
+    "gpt-4o-mini-transcribe",
+    "gpt-4o-mini-tts"
+  ],
+  "capabilities": {
+    "chat": true,
+    "streaming": true,
+    "speech_to_text": true,
+    "text_to_speech": true,
+    "vision": true
+  },
+  "notes": [
+    "RK3566 is efficient and thermally stable.",
+    "Excellent WiFi performance for streaming.",
+    "Great for portable AI devices and voice assistants."
+  ]
+}
