@@ -1,0 +1,24 @@
+{
+  "board_name": "Generic ARM Series",
+  "models_in_series": [
+    "Unknown ARMv8 Board"
+  ],
+  "cpu": "ARMv8 (unspecified)",
+  "python_version": "3.9+",
+  "audio_backend": "USB microphone recommended",
+  "recommended_models": [
+    "gpt-4o-mini"
+  ],
+  "capabilities": {
+    "chat": true,
+    "streaming": true,
+    "speech_to_text": false,
+    "text_to_speech": false,
+    "vision": false
+  },
+  "notes": [
+    "Capabilities depend heavily on kernel, RAM, and drivers.",
+    "Use USB audio for maximum compatibility.",
+    "Performance may vary significantly."
+  ]
+}
