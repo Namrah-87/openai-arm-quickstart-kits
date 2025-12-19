@@ -1,0 +1,29 @@
+{
+  "board_name": "Khadas VIM Series",
+  "models_in_series": [
+    "Khadas VIM1S",
+    "Khadas VIM3",
+    "Khadas VIM4"
+  ],
+  "cpu": "Amlogic A311D / Amlogic S905X4 (ARM Cortex-A73/A53)",
+  "python_version": "3.10+",
+  "audio_backend": "USB microphone or onboard I2S",
+  "recommended_models": [
+    "gpt-4o-mini",
+    "gpt-4o",
+    "gpt-4o-mini-transcribe",
+    "gpt-4o-mini-tts"
+  ],
+  "capabilities": {
+    "chat": true,
+    "streaming": true,
+    "speech_to_text": true,
+    "text_to_speech": true,
+    "vision": true
+  },
+  "notes": [
+    "VIM4 has an NPU that helps with local preprocessing.",
+    "Excellent thermals and build quality.",
+    "Great for advanced robotics and AI edge devices."
+  ]
+}
