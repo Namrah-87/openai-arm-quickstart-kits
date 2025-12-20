@@ -48,13 +48,23 @@ This keeps your templates clean and your code modular.
 ### Command‑Line Interface (`oaicli`)
 A simple, powerful CLI for interacting with OpenAI models on ARM boards:
 
-```
-oaicli chat "hello"
-oaicli stream "tell me a story"
-oaicli transcribe audio.wav
-oaicli speak "Hello world" out.mp3
-oaicli profile orange_pi_zero_series
-```
+Basic usage:
+
+- `oaicli chat "hello"`
+- `oaicli stream "tell me a story"`
+- `oaicli transcribe audio.wav`
+- `oaicli speak "Hello world" out.mp3`
+- `oaicli profile orange_pi_zero_series`
+- `oaicli profile auto`
+
+Advanced commands:
+
+- `oaicli setup` — interactive setup wizard  
+- `oaicli doctor` — diagnostics and environment checks  
+- `oaicli benchmark` — basic performance tests  
+- `oaicli update` — update repo and dependencies  
+- `oaicli record output.wav [duration]` — record microphone audio  
+- `oaicli play output.wav` — play audio  
 
 ---
 
@@ -77,7 +87,13 @@ openai-arm-quickstart-kits/
 │
 ├── cli/
 │   ├── __init__.py
-│   └── main.py
+│   ├── main.py
+│   ├── setup.py
+│   ├── doctor.py
+│   ├── benchmark.py
+│   ├── update.py
+│   ├── record.py
+│   └── play.py
 │
 ├── openai_arm/
 │   ├── __init__.py
@@ -157,6 +173,22 @@ OPENAI_API_KEY=your-key-here
 
 ---
 
+## ✅ Uses of the OpenAI API Key
+
+This toolkit uses the OpenAI API to provide all AI functionality on ARM boards.  
+Your API key is required so the toolkit can authenticate with OpenAI’s servers and perform the following actions:
+
+- Sending chat requests (text generation)
+- Streaming responses for real‑time interaction
+- Speech‑to‑text (audio transcription)
+- Text‑to‑speech (audio generation)
+- Image description (vision model)
+
+The key is loaded locally from your `.env` file and only used when you run commands or examples.  
+Do **not** commit your API key to GitHub or share it publicly.
+
+---
+
 ## ✅ Using the CLI
 
 ### Chat
@@ -182,6 +214,37 @@ oaicli speak "Hello from my ARM board" out.mp3
 ### Show a hardware profile
 ```bash
 oaicli profile orange_pi_zero_series
+oaicli profile auto
+```
+
+### Setup wizard
+```bash
+oaicli setup
+```
+
+### Diagnostics
+```bash
+oaicli doctor
+```
+
+### Benchmark
+```bash
+oaicli benchmark
+```
+
+### Update
+```bash
+oaicli update
+```
+
+### Record audio
+```bash
+oaicli record output.wav 5
+```
+
+### Play audio
+```bash
+oaicli play output.wav
 ```
 
 ---
@@ -264,3 +327,5 @@ You can contribute:
 - new templates  
 - showcase apps  
 - documentation improvements  
+
+---
